@@ -25,13 +25,18 @@ export default function RootLayout() {
   if (!loaded) {
     return null;
   }
-  if (ShowLoader ) {
-    return <MainLoader/>
+  if (ShowLoader) {
+    return <MainLoader />;
   }
 
   return (
     <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="(tabs)" options={{  headerShown: false }} />
+      <Stack.Screen
+        name="(modals)/login"
+        options={{ animation:'slide_from_bottom', presentation:'modal',headerTitle:'' 
+         }}
+      />
     </Stack>
   );
 }
